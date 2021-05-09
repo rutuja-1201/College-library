@@ -1,22 +1,15 @@
 console.log("This is index.js");
-// Todos"
-// 1. Store all the data to the localStorage
-// 2. Give another column as an option to delete the book
-// 3. Add a scroll bar to the view
 
-// Constructor
 function Book(name, author, type) {
     this.name = name;
     this.author = author;
     this.type = type;
 }
 
-// Display Constructor
 function Display() {
 
 }
 
-// Add methods to display prototype
 Display.prototype.add = function (book) {
     console.log("Adding to UI");
     tableBody = document.getElementById('tableBody');
@@ -28,13 +21,11 @@ Display.prototype.add = function (book) {
     tableBody.innerHTML += uiString;
 }
 
-// Implement the clear function
 Display.prototype.clear = function () {
     let libraryForm = document.getElementById('libraryForm');
     libraryForm.reset();
 }
 
-// Implement the validate function
 Display.prototype.validate = function (book) {
     if (book.name.length < 2 || book.author.length < 2) {
         return false
@@ -57,8 +48,6 @@ Display.prototype.show = function (type, displayMessage) {
 
 }
 
-
-// Add submit event listener to libraryForm
 let libraryForm = document.getElementById('libraryForm');
 libraryForm.addEventListener('submit', libraryFormSubmit);
 
@@ -93,7 +82,6 @@ function libraryFormSubmit(e) {
         display.show('success', 'Your book has been successfully added')
     }
     else {
-        // Show error to the user
         display.show('danger', 'Sorry you cannot add this book');
     }
 
@@ -156,7 +144,6 @@ class Display {
     }
 }
 
-// Add submit event listener to libraryForm
 let libraryForm = document.getElementById('libraryForm');
 libraryForm.addEventListener('submit', libraryFormSubmit);
 
@@ -191,7 +178,6 @@ function libraryFormSubmit(e) {
         display.show('success', 'Your book has been successfully added')
     }
     else {
-        // Show error to the user
         display.show('danger', 'Sorry you cannot add this book');
     }
 
